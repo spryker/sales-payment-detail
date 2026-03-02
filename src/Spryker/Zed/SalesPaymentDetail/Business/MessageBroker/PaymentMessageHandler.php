@@ -25,10 +25,6 @@ class PaymentMessageHandler implements PaymentMessageHandlerInterface
      */
     protected SalesPaymentDetailEntityManagerInterface $salesPaymentDetailEntityManager;
 
-    /**
-     * @param \Spryker\Zed\SalesPaymentDetail\Persistence\SalesPaymentDetailRepositoryInterface $salesPaymentDetailRepository
-     * @param \Spryker\Zed\SalesPaymentDetail\Persistence\SalesPaymentDetailEntityManagerInterface $salesPaymentDetailEntityManager
-     */
     public function __construct(
         SalesPaymentDetailRepositoryInterface $salesPaymentDetailRepository,
         SalesPaymentDetailEntityManagerInterface $salesPaymentDetailEntityManager
@@ -37,11 +33,6 @@ class PaymentMessageHandler implements PaymentMessageHandlerInterface
         $this->salesPaymentDetailEntityManager = $salesPaymentDetailEntityManager;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentCreatedTransfer $paymentCreatedTransfer
-     *
-     * @return void
-     */
     public function handlePaymentCreated(PaymentCreatedTransfer $paymentCreatedTransfer): void
     {
         if (($paymentCreatedTransfer->getEntityReference() && $this->salesPaymentDetailRepository->findByEntityReference($paymentCreatedTransfer->getEntityReferenceOrFail())) || $this->salesPaymentDetailRepository->findByPaymentReference($paymentCreatedTransfer->getPaymentReferenceOrFail())) {
@@ -54,11 +45,6 @@ class PaymentMessageHandler implements PaymentMessageHandlerInterface
         $this->salesPaymentDetailEntityManager->createSalesPaymentDetails($salesPaymentDetailTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentUpdatedTransfer $paymentUpdatedTransfer
-     *
-     * @return void
-     */
     public function handlePaymentUpdated(PaymentUpdatedTransfer $paymentUpdatedTransfer): void
     {
         $salesPaymentDetailTransfer = $this->salesPaymentDetailRepository->findByEntityReference($paymentUpdatedTransfer->getEntityReferenceOrFail());

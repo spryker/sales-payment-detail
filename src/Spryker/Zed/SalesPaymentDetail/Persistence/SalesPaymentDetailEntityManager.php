@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class SalesPaymentDetailEntityManager extends AbstractEntityManager implements SalesPaymentDetailEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesPaymentDetailTransfer $salesPaymentDetailTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer
-     */
     public function createSalesPaymentDetails(SalesPaymentDetailTransfer $salesPaymentDetailTransfer): SalesPaymentDetailTransfer
     {
         $salesPaymentDetailEntity = $this->getFactory()->createSalesPaymentDetailMapper()->mapSalesPaymentDetailTransferToSalesPaymentDetailEntity($salesPaymentDetailTransfer, new SpySalesPaymentDetail());
@@ -29,11 +24,6 @@ class SalesPaymentDetailEntityManager extends AbstractEntityManager implements S
         return $salesPaymentDetailTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesPaymentDetailTransfer $salesPaymentDetailTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer
-     */
     public function updateSalesPaymentDetails(SalesPaymentDetailTransfer $salesPaymentDetailTransfer): SalesPaymentDetailTransfer
     {
         $salesPaymentDetailEntity = $this->getFactory()->createSalesPaymentDetailQuery()

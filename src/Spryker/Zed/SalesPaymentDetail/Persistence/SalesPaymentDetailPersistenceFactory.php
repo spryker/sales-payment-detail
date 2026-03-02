@@ -18,17 +18,11 @@ use Spryker\Zed\SalesPaymentDetail\Persistence\Propel\Mapper\SalesPaymentDetailM
  */
 class SalesPaymentDetailPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesPaymentDetail\Persistence\Propel\Mapper\SalesPaymentDetailMapper
-     */
     public function createSalesPaymentDetailMapper(): SalesPaymentDetailMapper
     {
         return new SalesPaymentDetailMapper();
     }
 
-    /**
-     * @return \Orm\Zed\SalesPaymentDetail\Persistence\SpySalesPaymentDetailQuery
-     */
     public function createSalesPaymentDetailQuery(): SpySalesPaymentDetailQuery
     {
         return SpySalesPaymentDetailQuery::create();

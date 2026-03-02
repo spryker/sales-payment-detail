@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class SalesPaymentDetailRepository extends AbstractRepository implements SalesPaymentDetailRepositoryInterface
 {
-    /**
-     * @param string $entityReference
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer|null
-     */
     public function findByEntityReference(string $entityReference): ?SalesPaymentDetailTransfer
     {
         $salesPaymentDetailEntity = $this->getFactory()
@@ -36,11 +31,6 @@ class SalesPaymentDetailRepository extends AbstractRepository implements SalesPa
             ->mapSalesPaymentDetailEntityToSalesPaymentDetailTransfer($salesPaymentDetailEntity, new SalesPaymentDetailTransfer());
     }
 
-    /**
-     * @param string $paymentReference
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer|null
-     */
     public function findByPaymentReference(string $paymentReference): ?SalesPaymentDetailTransfer
     {
         $salesPaymentDetailEntity = $this->getFactory()

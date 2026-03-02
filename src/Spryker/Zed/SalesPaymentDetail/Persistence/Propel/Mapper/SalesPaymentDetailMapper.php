@@ -12,12 +12,6 @@ use Orm\Zed\SalesPaymentDetail\Persistence\SpySalesPaymentDetail;
 
 class SalesPaymentDetailMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesPaymentDetailTransfer $salesPaymentDetailTransfer
-     * @param \Orm\Zed\SalesPaymentDetail\Persistence\SpySalesPaymentDetail $salesPaymentDetailEntity
-     *
-     * @return \Orm\Zed\SalesPaymentDetail\Persistence\SpySalesPaymentDetail
-     */
     public function mapSalesPaymentDetailTransferToSalesPaymentDetailEntity(
         SalesPaymentDetailTransfer $salesPaymentDetailTransfer,
         SpySalesPaymentDetail $salesPaymentDetailEntity
@@ -25,12 +19,6 @@ class SalesPaymentDetailMapper
         return $salesPaymentDetailEntity->fromArray($salesPaymentDetailTransfer->toArray());
     }
 
-    /**
-     * @param \Orm\Zed\SalesPaymentDetail\Persistence\SpySalesPaymentDetail $salesPaymentDetailEntity
-     * @param \Generated\Shared\Transfer\SalesPaymentDetailTransfer $salesPaymentDetailTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer
-     */
     public function mapSalesPaymentDetailEntityToSalesPaymentDetailTransfer(
         SpySalesPaymentDetail $salesPaymentDetailEntity,
         SalesPaymentDetailTransfer $salesPaymentDetailTransfer

@@ -11,17 +11,7 @@ use Generated\Shared\Transfer\SalesPaymentDetailTransfer;
 
 interface SalesPaymentDetailRepositoryInterface
 {
-    /**
-     * @param string $entityReference
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer|null
-     */
     public function findByEntityReference(string $entityReference): ?SalesPaymentDetailTransfer;
 
-    /**
-     * @param string $paymentReference
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer|null
-     */
     public function findByPaymentReference(string $paymentReference): ?SalesPaymentDetailTransfer;
 }

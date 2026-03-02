@@ -31,9 +31,6 @@ class PaymentCreatedTest extends Unit
      */
     protected SalesPaymentDetailAsyncApiTester $tester;
 
-    /**
-     * @return void
-     */
     public function testPaymentCreatedMessageIsPersistedWhenPaymentReferenceForTheOrderWasFoundForTheOrderReference(): void
     {
         // Arrange
@@ -60,9 +57,6 @@ class PaymentCreatedTest extends Unit
         $this->tester->assertSalesPaymentDetailByPaymentReferenceIsIdentical($paymentReference, $salesPaymentDetailTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentCreatedMessageIsPersistedWhenOnlyThePaymentReferenceIsGiven(): void
     {
         // Arrange
@@ -84,9 +78,6 @@ class PaymentCreatedTest extends Unit
         $this->tester->assertSalesPaymentDetailByPaymentReferenceIsIdentical($paymentReference, $salesPaymentDetailTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentCreatedMessageIsIgnoredWhenPaymentReferenceForOrderReferenceAlreadyExists(): void
     {
         // Arrange
@@ -113,9 +104,6 @@ class PaymentCreatedTest extends Unit
         $this->tester->assertSalesPaymentDetailByPaymentReferenceIsIdentical($paymentReference, $salesPaymentDetailTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentCreatedMessageIsIgnoredWhenOnlyThePaymentReferenceIsGivenAndTheSalesPaymentDetailsAlreadyExists(): void
     {
         // Arrange

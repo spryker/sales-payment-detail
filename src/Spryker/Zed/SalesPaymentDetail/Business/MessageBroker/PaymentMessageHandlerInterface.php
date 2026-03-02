@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\PaymentUpdatedTransfer;
 
 interface PaymentMessageHandlerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PaymentCreatedTransfer $paymentCreatedTransfer
-     *
-     * @return void
-     */
     public function handlePaymentCreated(PaymentCreatedTransfer $paymentCreatedTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentUpdatedTransfer $paymentUpdatedTransfer
-     *
-     * @return void
-     */
     public function handlePaymentUpdated(PaymentUpdatedTransfer $paymentUpdatedTransfer): void;
 }

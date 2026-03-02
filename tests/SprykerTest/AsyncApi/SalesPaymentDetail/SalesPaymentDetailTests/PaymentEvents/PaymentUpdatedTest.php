@@ -31,9 +31,6 @@ class PaymentUpdatedTest extends Unit
      */
     protected SalesPaymentDetailAsyncApiTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGivenSalesPaymentDetailsDoNotExistsWhenThePaymentUpdatedMessageHasAnEntityReferenceAndAPaymentReferenceThenTheSalesPaymentDetailsArePersisted(): void
     {
         // Arrange
@@ -56,9 +53,6 @@ class PaymentUpdatedTest extends Unit
         $this->tester->assertSalesPaymentDetailByPaymentReferenceIsIdentical($paymentReference, $salesPaymentDetailTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGivenSalesPaymentDetailsExistsForAnOrderReferenceAndPaymentReferenceWhenThePaymentUpdatedMessageHasUpdatedDetailsThenTheNewDetailsArePersisted(): void
     {
         // Arrange

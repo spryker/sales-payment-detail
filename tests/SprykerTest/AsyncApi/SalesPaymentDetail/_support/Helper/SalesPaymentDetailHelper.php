@@ -19,31 +19,16 @@ use Orm\Zed\SalesPaymentDetail\Persistence\SpySalesPaymentDetailQuery;
 
 class SalesPaymentDetailHelper extends Module
 {
-    /**
-     * @param array $seed
-     *
-     * @return \Generated\Shared\Transfer\PaymentCreatedTransfer
-     */
     public function havePaymentCreatedTransfer(array $seed = []): PaymentCreatedTransfer
     {
         return (new PaymentCreatedBuilder($seed))->build();
     }
 
-    /**
-     * @param array $seed
-     *
-     * @return \Generated\Shared\Transfer\PaymentUpdatedTransfer
-     */
     public function havePaymentUpdatedTransfer(array $seed = []): PaymentUpdatedTransfer
     {
         return (new PaymentUpdatedBuilder($seed))->build();
     }
 
-    /**
-     * @param array $seed
-     *
-     * @return \Generated\Shared\Transfer\SalesPaymentDetailTransfer
-     */
     public function haveSalesPaymentDetail(array $seed = []): SalesPaymentDetailTransfer
     {
         $salesPaymentDetailTransfer = (new SalesPaymentDetailBuilder($seed))->build();
@@ -55,12 +40,6 @@ class SalesPaymentDetailHelper extends Module
         return $salesPaymentDetailTransfer;
     }
 
-    /**
-     * @param string $paymentReference
-     * @param \Generated\Shared\Transfer\SalesPaymentDetailTransfer $salesPaymentDetailTransfer
-     *
-     * @return void
-     */
     public function assertSalesPaymentDetailByPaymentReferenceIsIdentical(
         string $paymentReference,
         SalesPaymentDetailTransfer $salesPaymentDetailTransfer
@@ -84,11 +63,6 @@ class SalesPaymentDetailHelper extends Module
         }
     }
 
-    /**
-     * @param string $paymentReference
-     *
-     * @return void
-     */
     public function assertSalesPaymentDetailByPaymentReferenceIsNotFound(string $paymentReference): void
     {
         $salesPaymentDetailQuery = new SpySalesPaymentDetailQuery();

@@ -18,9 +18,6 @@ use Spryker\Zed\SalesPaymentDetail\Business\MessageBroker\PaymentMessageHandlerI
  */
 class SalesPaymentDetailBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesPaymentDetail\Business\MessageBroker\PaymentMessageHandlerInterface
-     */
     public function createPaymentMessageHandler(): PaymentMessageHandlerInterface
     {
         return new PaymentMessageHandler($this->getRepository(), $this->getEntityManager());
